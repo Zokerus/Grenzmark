@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://n4pdgds5sc87"]
+
+[ext_resource type="Script" uid="uid://bdgyg6bpudjmk" path="res://scripts/player/player_controller.gd" id="1_dovo2"]
+[ext_resource type="Script" uid="uid://cwese8phne6tp" path="res://scripts/player/camera_spring_arm.gd" id="2_gmlin"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7p2l"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8afob"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_dovo2")
+mouseSensitivity = null
+padLookSensitivity = null
+min_vertical_boundary = null
+max_vertical_boundary = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_x7p2l")
+
+[node name="RigYawPivot" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigYawPivot"]
+mesh = SubResource("CapsuleMesh_8afob")
+
+[node name="CameraYawPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="CameraPitchPivot" type="Node3D" parent="CameraYawPivot"]
+
+[node name="CameraSpringArm" type="Node3D" parent="CameraYawPivot/CameraPitchPivot" node_paths=PackedStringArray("target")]
+script = ExtResource("2_gmlin")
+target = NodePath("..")
+
+[node name="RayCast3D" type="RayCast3D" parent="CameraYawPivot/CameraPitchPivot/CameraSpringArm"]
+target_position = Vector3(0, 0, 5)
+
+[node name="Camera3D" type="Camera3D" parent="CameraYawPivot/CameraPitchPivot/CameraSpringArm"]

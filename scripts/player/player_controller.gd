@@ -52,8 +52,18 @@ func get_movement_direction()-> Vector3:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	var input_vector := Vector3(input_dir.x, 0, input_dir.y).normalized()
-	return camera_yaw_pivot.transform.basis * input_vector
+	#var input_vector := Vector3(input_dir.x, 0, input_dir.y).normalized()
+	#return camera_yaw_pivot.transform.basis * input_vector
+	var yaw_basis := camera_yaw_pivot.global_transform.basis
+	var forward := -yaw_basis.z
+	forward.y = 0
+	forward = forward.normalized()
+
+	var right := yaw_basis.x
+	right.y = 0
+	right = right.normalized()
+
+	return (forward * input_dir.y + right * input_dir.x).normalized()
 
 func handle_movement(direction: Vector3, delta: float) -> void:
 	#var inputDir := Vector2(

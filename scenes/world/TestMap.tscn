@@ -31,7 +31,3 @@ size = Vector3(50, 1, 50)
 
 [node name="Player" parent="." instance=ExtResource("1_84rui")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mouseSensitivity = 0.002
-padLookSensitivity = 2.0
-min_vertical_boundary = -60.0
-max_vertical_boundary = 17.0

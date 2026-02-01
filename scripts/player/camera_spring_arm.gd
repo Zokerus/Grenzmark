@@ -35,9 +35,9 @@ func _physics_process(delta: float) -> void:
 		desired_len = clampf(local_hit.z - camera_margin, min_length, max_length)
 
 	# smooth
-	current_len = desired_len#lerpf(current_len, desired_len, 1.0 - exp(-smooth_speed * delta))
+	current_len = lerpf(current_len, desired_len, 1.0 - exp(-smooth_speed * delta))
 
 	# Kamera entlang -Z setzen
 	camera_3d.position = Vector3(0, 0, current_len)
 	
-	global_transform = global_transform.interpolate_with(target.global_transform, 1.0 - exp(-decay * delta))
+	#global_transform = global_transform.interpolate_with(target.global_transform, 1.0 - exp(-decay * delta))

@@ -28,10 +28,6 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
 	move_and_slide()
 
 func handle_camera_rotation(delta: float) -> void:
@@ -64,5 +60,3 @@ func handle_movement(delta: float) -> void:
 	var direction := (transform.basis * Vector3(inputDir.x, 0, inputDir.y)).normalized()
 	velocity.x = direction.x * moveSpeed
 	velocity.z = direction.z * moveSpeed
-	
-	move_and_slide()

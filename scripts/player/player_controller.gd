@@ -22,7 +22,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	handle_camera_rotation(delta)
-	handle_movement(delta)
+	var direction := get_movement_direction()
+	handle_movement(direction, delta)
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -47,16 +48,23 @@ func handle_camera_rotation(delta: float) -> void:
 	#$SpringArm.global_transform = vertical_pivot.global_transform
 	mouseLookDelta = Vector2.ZERO
 
-func handle_movement(delta: float) -> void:
+func get_movement_direction()-> Vector3:
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
+	var input_vector := Vector3(input_dir.x, 0, input_dir.y).normalized()
+	return camera_yaw_pivot.transform.basis * input_vector
+
+func handle_movement(direction: Vector3, delta: float) -> void:
 	#var inputDir := Vector2(
 		#Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		#Input.get_action_strength("move_forward") - Input.get_action_strength("move_backward")
 		#)
-	var inputDir : =Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
+	#var inputDir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	
-	if inputDir.length() > 1.0:
-		inputDir = inputDir.normalized()
+	#if inputDir.length() > 1.0:
+		#inputDir = inputDir.normalized()
 		
-	var direction := (transform.basis * Vector3(inputDir.x, 0, inputDir.y)).normalized()
+	#var direction := (transform.basis * Vector3(inputDir.x, 0, inputDir.y)).normalized()
 	velocity.x = direction.x * moveSpeed
 	velocity.z = direction.z * moveSpeed

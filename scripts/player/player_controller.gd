@@ -55,7 +55,7 @@ func get_movement_direction()-> Vector3:
 	#var input_vector := Vector3(input_dir.x, 0, input_dir.y).normalized()
 	#return camera_yaw_pivot.transform.basis * input_vector
 	var yaw_basis := camera_yaw_pivot.global_transform.basis
-	var forward := -yaw_basis.z
+	var forward := yaw_basis.z
 	forward.y = 0
 	forward = forward.normalized()
 

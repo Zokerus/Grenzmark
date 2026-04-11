@@ -2,7 +2,9 @@
 
 **Grenzmark** ist ein kleines, veröffentlichbares 3D-RPG-Testspiel, entwickelt mit der [Godot Engine](https://godotengine.org/). Es dient der praktischen Erprobung zentraler Spielsysteme wie **Kampf**, **Crafting** und **Ressourcensammeln** in einem begrenzten Areal, das ein kleines Dorf mit Umgebung umfasst.
 
-Low-Poly-Assets stammen von [Kenny.nl](https://kenney.nl/assets), um prototypisches Gameplay schnell visuell umzusetzen.
+Low-Poly-Assets stammen aus frei verfügbaren Assetpacks, u. a. von:
+- [Kenny.nl](https://kenney.nl/assets)
+- [Kay Lousberg (itch.io)](https://kaylousberg.itch.io)
 
 ---
 
@@ -16,6 +18,20 @@ Der Spieler erkundet eine Grenzmark mit:
 - Feldern und einer **Mühle**
 
 Dabei gilt es, Ressourcen zu sammeln, Ausrüstung zu verbessern und sich gegen regelmäßig spawnende Gegner zu behaupten.
+
+---
+
+## 🧪 Prototyp-Status
+
+Dieses Projekt ist als **iterativer Gameplay-Prototyp** angelegt.
+
+Implementierte Systeme gelten als:
+- ✅ funktional vorbereitet
+- ❌ nicht als final oder „polished“
+
+Verbesserungen am Spielgefühl (z. B. Smoothing, Feintuning, Animationen)
+werden **bewusst in späteren Iterationen** als eigene Aufgaben behandelt,
+um den Prototyping-Fokus nicht zu verlieren.
 
 ---
 
@@ -76,6 +92,6 @@ Aktuelle Entwicklungs-Roadmap findest du im [Project-Board](../../projects).
 Voraussetzung: [Godot 4.5](https://godotengine.org/download)
 
 ```bash
-git clone https://github.com/DEIN_USERNAME/grenzmark.git
+git clone https://github.com/Zokerus/Grenzmark.git
 cd grenzmark
 # Öffne das Projekt in Godot

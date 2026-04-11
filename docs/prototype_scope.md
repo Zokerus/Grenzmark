@@ -36,6 +36,22 @@ Der Prototyp ist ein **Erlebnis- und Machbarkeitstest**, kein fertiges Spiel.
 
 ---
 
+## Entwicklungsgrundsatz: Funktional vor Feinschliff
+
+Alle Systeme im Prototyp gelten als **funktional**, nicht als abgeschlossen.
+
+Das bedeutet:
+- Mechaniken müssen testbar und stabil sein
+- Spielgefühl, Smoothing, Balancing und visuelle Feinabstimmung
+  werden **bewusst zurückgestellt**
+- Verbesserungen erfolgen später über klar definierte Refinement-Aufgaben
+
+Dieser Ansatz dient dazu, frühzeitig Erkenntnisse über
+Spielbarkeit, Orientierung und Atmosphäre zu gewinnen,
+ohne den Prototyp durch Politur zu verlangsamen.
+
+---
+
 ## 🧭 Art des Prototyps
 
 - 🧱 **Vertikaler Slice**  
@@ -57,7 +73,30 @@ Der Prototyp ist ein **Erlebnis- und Machbarkeitstest**, kein fertiges Spiel.
 ### Nicht enthalten
 - ❌ Weltkarte oder Minimap  
 - ❌ Fast Travel  
-- ❌ Mehrere Biome  
+- ❌ Mehrere Biome 
+
+---
+
+## Weltlayout v0 (Prototyp)
+
+Der Prototyp nutzt ein klar begrenztes Weltareal in Form eines Talkessels.
+
+### Grundstruktur
+- Ein **Talkessel**, umgeben von Bergen, dient als natürliche Begrenzung
+- Ein **Flusslauf** bildet die zentrale Orientierungslinie
+- Ein kleines **Dorf** liegt auf einer Seite des Flusses
+- Ein **Steg** verbindet das Dorf mit der gegenüberliegenden Seite
+
+### Umgebung
+- Auf der gegenüberliegenden Flussseite befindet sich ein **Waldgebiet**
+- Ein **Weg mit Kreuzung** dient als zentraler Entscheidungspunkt
+  - Weg A führt zu einem **Holzfällerlager**
+  - Weg B führt zu einer **Mine / einem Minenschacht**
+
+Dieses Layout dient der Erprobung von:
+- Orientierung ohne Marker
+- natürlicher Weglesbarkeit
+- Entdeckung durch Landmarken 
 
 ---
 
